@@ -1,5 +1,5 @@
-import { DropDownData } from "../common";
-import { reshapeDropdownData } from "../utils";
+import { DropDownData } from "../common/types";
+import { reshapeDropdownData } from "../utils/reshapData";
 import client from "./client";
 
 export async function getCountryCities(

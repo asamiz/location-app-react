@@ -1,4 +1,4 @@
-import { DropDownData } from "../common";
+import { DropDownData } from "../common/types";
 
 export function reshapeDropdownData(data: any): DropDownData[] {
   let reshapedData: DropDownData[] = [];
