@@ -47,6 +47,7 @@ const Home = () => {
   // Areas API calling
   const onSelectCity = useCallback(
     async (item: any) => {
+      dispatch({ type: TYPES.UPDATE_AREAS, payload: [] });
       // Make the request only if the country is Egypt
       if (selectedCountry?.value === "56") {
         const response = await getCitiesAreas(selectedCountry, item);
