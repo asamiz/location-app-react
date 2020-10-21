@@ -34,6 +34,6 @@ export const useFetch = (url: string) => {
       }
     };
     fetchData();
-  }, []);
+  });
   return state;
 };

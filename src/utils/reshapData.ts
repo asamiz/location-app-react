@@ -8,6 +8,7 @@ export function reshapeDropdownData(data: any): DropDownData[] {
       value: item.id,
     };
     reshapedData.push(reshapedObject);
+    return null;
   });
   return reshapedData;
 }
