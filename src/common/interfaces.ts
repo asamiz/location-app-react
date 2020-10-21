@@ -4,6 +4,8 @@ export interface IHomeState {
   cities: DropDownData[];
   areas: DropDownData[];
   selectedCountry: DropDownData | {};
+  countries: DropDownData[];
+  countriesLoading: boolean;
 }
 
 export interface IHomeAction {

@@ -7,6 +7,7 @@ interface Props {
   title: string;
   data: DropDownData[] | undefined;
   placeholder: string;
+  disabled?: boolean;
   onChangeItem?: (item: ValueType<DropDownData>) => void;
 }
 
@@ -17,7 +18,7 @@ const customStyles: Partial<Styles> = {
   }),
   container: (provided) => ({
     ...provided,
-    width: "40%",
+    width: "50%",
   }),
 };
 
@@ -26,6 +27,7 @@ export const TitledSelector = ({
   data,
   placeholder,
   onChangeItem,
+  disabled,
 }: Props) => {
   return (
     <div>
@@ -34,6 +36,7 @@ export const TitledSelector = ({
         options={data}
         placeholder={placeholder}
         styles={customStyles}
+        isDisabled={disabled}
         onChange={(item) => onChangeItem && onChangeItem(item)}
       />
     </div>

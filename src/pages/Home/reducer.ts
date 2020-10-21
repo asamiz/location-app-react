@@ -10,6 +10,10 @@ export const HomeReducer = (initialState: IHomeState, action: IHomeAction) => {
         areas: [],
         cities: [],
       };
+    case TYPES.COUNTRIES_LOADING:
+      return { ...initialState, countriesLoading: action.payload };
+    case TYPES.GET_COUNTRIES:
+      return { ...initialState, countries: action.payload };
     case TYPES.UPDATE_CITIES:
       return { ...initialState, cities: action.payload };
     case TYPES.UPDATE_AREAS:
