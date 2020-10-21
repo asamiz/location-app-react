@@ -28,17 +28,15 @@ export const LocationForm = ({
         placeholder={"Please select your country .."}
         onChangeItem={(item) => onSelectCountry && onSelectCountry(item)}
       />
-      <TitledSelector
-        data={cities}
-        title={"City *"}
-        disabled={cities?.length === 0}
-        placeholder={
-          cities?.length === 0
-            ? "Please select country first .."
-            : "Please select your city .."
-        }
-        onChangeItem={(item) => onSelectCity && onSelectCity(item)}
-      />
+      {cities?.length !== 0 && (
+        <TitledSelector
+          data={cities}
+          title={"City *"}
+          disabled={cities?.length === 0}
+          placeholder={"Please select your city .."}
+          onChangeItem={(item) => onSelectCity && onSelectCity(item)}
+        />
+      )}
       {areas?.length !== 0 && (
         <TitledSelector
           data={areas}
