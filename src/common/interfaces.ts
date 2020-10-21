@@ -1,5 +1,6 @@
 import { DropDownData } from "../common/types";
 
+/** INTERFACES */
 export interface IHomeState {
   cities: DropDownData[];
   areas: DropDownData[];

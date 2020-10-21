@@ -11,6 +11,7 @@ interface Props {
   onChangeItem?: (item: ValueType<DropDownData>) => void;
 }
 
+// Selector custom styles
 const customStyles: Partial<Styles> = {
   option: (provided) => ({
     ...provided,

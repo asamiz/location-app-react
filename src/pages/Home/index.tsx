@@ -18,6 +18,7 @@ const initialState: IHomeState = {
   countriesLoading: true,
 };
 
+// Loader Styles
 const override = css`
   display: block;
   margin: 0 auto;
@@ -30,18 +31,23 @@ const Home = () => {
     { cities, areas, selectedCountry, countriesLoading, countries },
     dispatch,
   ] = useReducer(HomeReducer, initialState);
+
   useEffect(() => {
     onLoad();
     dispatch({ type: TYPES.COUNTRIES_LOADING, payload: false });
   }, []);
+
+  // Cities API calling
   const onSelectCountry = useCallback(async (item: ValueType<DropDownData>) => {
     dispatch({ type: TYPES.SELECTED_COUNTRY, payload: item });
     const response = await getCountryCities(item);
     dispatch({ type: TYPES.UPDATE_CITIES, payload: response });
   }, []);
 
+  // Areas API calling
   const onSelectCity = useCallback(
     async (item: any) => {
+      // Make the request only if the country is Egypt
       if (selectedCountry?.value === "56") {
         const response = await getCitiesAreas(selectedCountry, item);
         dispatch({ type: TYPES.UPDATE_AREAS, payload: response });
@@ -52,6 +58,7 @@ const Home = () => {
     [selectedCountry]
   );
 
+  // Countries API calling (Called after rendering in useEffect)
   const onLoad = async () => {
     const response = await getCountries();
     dispatch({ type: TYPES.GET_COUNTRIES, payload: response });
