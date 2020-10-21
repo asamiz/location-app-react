@@ -20,6 +20,9 @@ const customStyles: Partial<Styles> = {
   container: (provided) => ({
     ...provided,
     width: "50%",
+    "@media only screen and (max-width: 600px)": {
+      width: "100%",
+    },
   }),
 };
 
